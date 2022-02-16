@@ -1,9 +1,12 @@
 import './App.css';
-import Paths from './Routes';
+import { TaskProvider } from './providers';
+import Paths from './View/Routes/';
 
 function App() {
   return (
-    <Paths />
+    <TaskProvider>
+      <Paths />
+    </TaskProvider>
   );
 }
 
