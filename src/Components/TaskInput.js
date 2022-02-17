@@ -11,7 +11,14 @@ function TaskInput() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await setTask([...task, { task: taskName, date: new Date().toLocaleString(), status: 'pending' }])
+        const objectTask = { 
+            _id: task.length,
+            class: '',
+            task: taskName,
+            date: new Date().toLocaleString(),
+            status: 'pending',
+        }
+        await setTask([...task, objectTask])
         setTaskName('');
     }
 

@@ -1,5 +1,6 @@
 import TaskInput from "../Components/TaskInput";
 import TaskList from "../Components/TaskList"
+import TaskMenu from "../Components/TaskMenu"
 
 
 
@@ -8,6 +9,7 @@ function TodoList() {
     <div className="TodoList">
       <TaskInput />
       <TaskList />
+      <TaskMenu />
     </div>
   );
 }
