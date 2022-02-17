@@ -1,10 +1,9 @@
-import {  useState } from "react";
-import { createTask } from "../../Controller";
-import {  useTask } from "../../providers";
+import { useState } from "react";
+import { useTask } from "../providers";
 
 function TaskInput() {
     const [task, setTask] = useTask();
-    const [taskName, setTaskName] = useState()
+    const [taskName, setTaskName] = useState('')
 
     const handleChange = ({ target }) => {
         setTaskName(target.value)
@@ -12,7 +11,8 @@ function TaskInput() {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-        await createTask({ task: taskName, date: new Date().toLocaleString(), status: 'pending' })
+        await setTask([...task, { task: taskName, date: new Date().toLocaleString(), status: 'pending' }])
+        setTaskName('');
     }
 
 
@@ -24,6 +24,7 @@ function TaskInput() {
                     className="input-task"
                     data-testid="input-task"
                     placeholder="Insert Task"
+                    value={taskName}
                     onChange={handleChange}
                 />
             </label>
