@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useTask } from "../providers";
+import '../style/index.css'
 
 function TaskInput() {
     const [task, setTask] = useTask();
@@ -24,11 +25,11 @@ function TaskInput() {
 
 
     return (
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} className="div-input">
             <label>
                 <input
                     name="input-task"
-                    className="input-task"
+                    className="input-task input"
                     data-testid="input-task"
                     placeholder="Insert Task"
                     value={taskName}
@@ -39,7 +40,7 @@ function TaskInput() {
                 type="submit"
                 name="button-task"
                 value="Send"
-                className="button-task"
+                className="button-task button"
                 data-testeid="button-task"
             />
         </form>
